@@ -1,0 +1,17 @@
+{
+    "Name":  "rg-az220-423200",
+    "Id":  null,
+    "IsCustom":  true,
+    "Description":  "Spektra Training Custom Role.",
+    "Actions":  [
+                    "Microsoft.Authorization/*/read",
+                    "Microsoft.Devices/IotHubs/*",
+                    "Microsoft.Resources/deployments/*",
+                    "Microsoft.Resources/subscriptions/resourceGroups/read",
+                    "Microsoft.Storage/storageAccounts/*",
+                    "Microsoft.StreamAnalytics/streamingjobs/*"
+                ],
+    "NotActions":  [
+
+                   ]
+}
