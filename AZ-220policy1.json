@@ -1,0 +1,51 @@
+{
+	 "if": {
+	    "anyOf": [
+		 {
+			"not": {
+			  "anyOf": [
+                    {
+				    "field": "type",
+				    "like": "Microsoft.Devices/IotHubs/*"
+				    },
+                    {
+				    "field": "type",
+				    "like": "Microsoft.Storage/storageAccounts/*"
+				    },
+                    {
+				    "field": "type",
+				    "like": "Microsoft.StreamAnalytics/streamingjobs/*"
+				    },
+                    {
+				    "field": "type",
+				    "in": ["Microsoft.Devices/IotHubs", "Microsoft.Storage/storageAccounts", "Microsoft.StreamAnalytics/streamingjobs"]
+				    }
+                ]
+			}
+		 },
+            {
+			"allOf": [
+			  {
+				"source": "action",
+				"equals": "Microsoft.Storage/storageAccounts/write"
+			  },
+			  {
+				"field": "type",
+				"equals": "Microsoft.Storage/storageAccounts"
+			  },
+			  {
+				"not": 
+				  {
+					"field": "Microsoft.Storage/storageAccounts/sku.name",
+					"in": ["StandardLRS"]
+				  }
+			   }
+			]
+		  },
+
+	  ]
+	},
+	"then": {
+	  "effect": "deny"
+	}
+}
