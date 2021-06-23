@@ -7,7 +7,7 @@
                     "Microsoft.Authorization/*/read",
                     "Microsoft.Devices/IotHubs/*",
                     "Microsoft.Resources/deployments/*",
-                    "Microsoft.Resources/subscriptions/resourceGroups/read",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
                     "Microsoft.Storage/storageAccounts/*",
                     "Microsoft.StreamAnalytics/streamingjobs/*"
                 ],
